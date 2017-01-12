@@ -1,0 +1,1 @@
+wget -O- -d --header="Accept: application/json" --header="Content-Type: application/json" --post-file=./auth.data http://127.0.0.1:20300/oauth

@@ -1,0 +1,7 @@
+{
+    "grant_type": "password",
+    "client_secret": "testpass",
+    "client_id": "testclient",
+    "username": "testuser",
+    "password": "testpass"
+}
