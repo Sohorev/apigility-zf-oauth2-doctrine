@@ -32,10 +32,10 @@ return [
             )
         ),
         /**** end ****/
-//        'cache' => array(
-//            'redis' => array(
-//                'instance' => 'doctrine.cache.redis',
-//            ),
-//        ),
+        'cache' => array(
+            'redis' => array(
+                'instance' => 'doctrine.cache.redis',
+            ),
+        ),
     ],
 ];

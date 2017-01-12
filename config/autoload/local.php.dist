@@ -1,14 +1,39 @@
 <?php
-/**
- * Local Configuration Override
- *
- * This configuration override file is for overriding environment-specific and
- * security-sensitive configuration information. Copy this file without the
- * .dist extension at the end and populate values as needed.
- *
- * @NOTE: This file is ignored from Git by default with the .gitignore included
- * in ZendSkeletonApplication. This is a good practice, as it prevents sensitive
- * credentials from accidentally being committed into version control.
- */
-
-return [];
+return [
+    // стандартная oauth не нужен если используется doctrine-oauth
+    'zf-mvc-auth' => [
+        'authentication' => [
+            'adapters' => [
+                'oauth_adapter' => [
+                    'adapter' => \ZF\MvcAuth\Authentication\OAuth2Adapter::class,
+                    'storage' => [
+                        'adapter' => \pdo::class,
+                        'dsn' => 'pgsql:host=192.168.0.196;port=5442;dbname=test',
+                        'route' => '/oauth',
+                        'username' => 'test_user',
+                        'password' => 'test_user',
+                    ],
+                ],
+            ],
+        ],
+    ],
+    'doctrine' => [
+        'connection' => [
+            'orm_default' => [
+                'driverClass' => \Doctrine\DBAL\Driver\PDOPgSql\Driver::class,
+                'params' => [
+                    'host' => '192.168.0.196',
+                    'user' => 'test_user',
+                    'password' => 'test_user',
+                    'dbname' => 'test',
+                    'port' => 5442,
+                    'charset' => 'UTF-8',
+                ],
+            ],
+        ],
+    ],
+    'redis' => [
+        'host' => '127.0.0.1',
+        'port' => 6379,
+    ],
+];
