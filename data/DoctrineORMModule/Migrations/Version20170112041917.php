@@ -150,8 +150,8 @@ class Version20170112041917 extends AbstractMigration
 WITH (
   OIDS=FALSE
 );');
-        $this->addSql("INSERT INTO oauth2_client (id, user_id, clientid, secret, redirecturi, granttype) VALUES (1, NULL, 'testclient', '" . '$2y$14$Fl9zez8UX69YGFhQW4bxaetp1KdKryuFhiy23CcGlQnNeQAk5UPKe' . "', NULL, NULL);");
-        $this->addSql("INSERT INTO users (id, username, password, blocked, firstname, lastname, token) VALUES (2, 'testuser', '" . '$2y$14$Fl9zez8UX69YGFhQW4bxaetp1KdKryuFhiy23CcGlQnNeQAk5UPKe' . "', 0, NULL, NULL, NULL);");
+        $this->addSql("INSERT INTO oauth2_client (id, user_id, clientid, secret, redirecturi, granttype) VALUES (1, NULL, 'testclient', '" . '$2y$10$EWuM6kFBJMmGT9sSvNy1Aus41NV9t5yZxU5iv7NFhsPT8OPndIKHi' . "', NULL, NULL);");
+        $this->addSql("INSERT INTO users (id, username, password, blocked, firstname, lastname, token) VALUES (2, 'testuser', '" . '$2y$10$EWuM6kFBJMmGT9sSvNy1Aus41NV9t5yZxU5iv7NFhsPT8OPndIKHi' . "', 0, NULL, NULL, NULL);");
         $this->addSql('ALTER TABLE ONLY oauth2_accesstoken
     ADD CONSTRAINT oauth2_accesstoken_pkey PRIMARY KEY (id);');
         $this->addSql('ALTER TABLE ONLY oauth2_accesstoken_to_scope

@@ -17,7 +17,7 @@ return [
     'Zend\\Router',
     'Zend\\Validator',
     'ZF\\Apigility',
-//    'ZF\\Apigility\\Documentation',
+    'ZF\\Apigility\\Documentation',
     'ZF\\ApiProblem',
     'ZF\\Configuration',
     'ZF\\OAuth2',

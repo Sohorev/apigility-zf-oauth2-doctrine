@@ -51,9 +51,13 @@ class Module
 
     public function onError($e) {
         if ($e->getError() == \Zend\Mvc\Application::ERROR_EXCEPTION) {
-            print_r($e->getParam('exception')->getTraceAsString());
+
+            $exc = $e->getParam('exception'); /* @var $exc \Exception */
+
+            print_r($exc->getMessage() . "\n");
+            print_r($exc->getTraceAsString());
             die();
-            // log in database or whatever
+           // log in database or whatever
         }
     }
 }
